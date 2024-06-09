@@ -44,7 +44,7 @@ Splunk inputs can be disabled when the license reaches the daily limit and re-en
 ```
 apt install apache2
 cp splunk.conf /etc/apache2/sites-enabled/splunk.conf  # copy provided apache config
-vi /etc/apache2/ports.conf                             # add a port for reverse proxy to listen on, ex. Listen 10.20.30.40:8088
+vi /etc/apache2/ports.conf                             # add a port for reverse proxy to listen on, ex. Listen 10.20.30.40:8000
 a2enmod proxy proxy_http                               # enable proxy module
 htpasswd -c /etc/apache2/.htpasswd user                # add a new user
 htpasswd    /etc/apache2/.htpasswd admin               # add a new admin
