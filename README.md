@@ -1,4 +1,4 @@
-# Splunk_Free_Extensions
+# Splunk Free Extensions
 A collection of scripts and configurations that enhance Splunk Free by adding access control (user/admin login), preventing license violations by stopping ingesting, and providing workarounds for alerting.
 
 There are several versions of Splunk software: Splunk Enterprise (a paid version) and Splunk Free. Splunk Free is a limited version (https://docs.splunk.com/Documentation/Splunk/latest/Admin/MoreaboutSplunkFree). Here are the most important limitations:
@@ -25,15 +25,38 @@ Splunk Free Extensions is a collection of scripts and configurations that enhanc
 * stop splunk input if the license usage reaches 500MB
 * etc.
 
-** Access Control **
+## Access Control
 
 The access control (login with username/password) can be enabled by putting Splunk behind a reverse proxy with a basic authentication. Only authenticated user can access Splunk. A direct access to Splunk is restricted by modifing splunk-launch.conf by configuring SPLUNK_BINDIP=127.0.0.1. On the reverse proxy you can configure several users that belong to two categories: users and admin. Users can do anything except modifing system settings. This is done by denying access to /manager/ URI path. Admins have access to all settings. 
 
-** Alerts **
+## Alerts
 
 To configuring an alert a cron job need to be configured that call a script that run a CLI SPL code and return results to the script. An example how to handle splunk stats results is provided. An Email action is provided in example (using mail or swacks command).
 A throttle function (suppressing subsequent alerts until the throttle period is expired) is realised by creating a timestamp file.
 
-** Prevent license violations **
+## Prevent license violations
 
 Splunk inputs can be disabled when the license reaches the daily limit and re-enabled at 00:00.
+
+## Setup
+
+### Configure reverse proxy to enable access control
+```
+apt install apache2
+cp splunk.conf /etc/apache2/sites-enabled/splunk.conf  # copy provided apache config
+vi /etc/apache2/ports.conf                             # add a port for reverse proxy to listen on, ex. Listen 10.20.30.40:8088
+a2enmod proxy proxy_http                               # enable proxy module
+htpasswd -bc /etc/apache2/.htpasswd user               # add a new user
+htpasswd -b  /etc/apache2/.htpasswd admin              # add a new admin
+systemctl restart apache2                              # restart apache
+
+vi /opt/splunk/etc/splunk-launch.conf                  # add SPLUNK_BINDIP=127.0.0.1 to bind Splunk to localhost
+systemctl restart Splunkd                              # restart Splunk
+```
+
+### Configure cron to enable Splunk alerts
+```
+vi splunk_free_alert.sh # modify SPL and mail parameters
+chmod +x splunk_free_alert.sh
+crontab -e # create a cronjob
+```
