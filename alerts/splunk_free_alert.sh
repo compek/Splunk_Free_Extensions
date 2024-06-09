@@ -15,7 +15,7 @@ BYTES=$(/opt/splunk/bin/splunk search ' index=_internal earliest=@d sourcetype=s
 if [ $DEBUG -eq 1 ]; then echo Bytes: $BYTES; fi
 NAME_OF_ALERT_SANITIZED=$(echo "$NAME_OF_ALERT" | sed 's/[^A-Za-z0-9]/_/g')
 if [ $DEBUG -eq 1 ]; then echo NAME_OF_ALERT_SANITIZED $NAME_OF_ALERT_SANITIZED; fi
-if [[ $BYTES -gt 4900 ]]; then
+if [[ $BYTES -gt 490000000 ]]; then
   # check for throttle file, stop if it still active, delete is if it is expired
   REGEX="${THROTTLE_FOLDER}/throttle_${NAME_OF_ALERT_SANITIZED}_[0-9]+_[0-9]+\\.txt"
   MATCHING_THROTTLE_FILES=($(find $THROTTLE_FOLDER -maxdepth 1 -type f -regex "$REGEX"))
