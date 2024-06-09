@@ -19,7 +19,7 @@ Even with these limitations Splunk Free is still very useful.
 Splunk Free Extensions is a collection of scripts and configurations that enhance Splunk Free and allows:
 * configure a reverse proxy to add access control:
   * create login (username/password)
-  * admin user can access everything and modify system settings
+  * user "admin" can access everything and modify system settings
   * user "user" cannot modify system settings
 * provides a workaround to configure alert actions by using cron and bash scripts
 * stop splunk input if the license usage reaches 500MB
