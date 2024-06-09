@@ -1,6 +1,11 @@
-one click config, YT video
-setup step by step, YT video
-reverse proxy with certificates (incl. when Splunk already HTTPS-enabled)
-reverse proxy on the same port 8000 (Splunk on 127.0.0.1:8000)
-reinstall when Splunk search was disabled after three violations, maintaining data
-list of enterprise features that are available in Splunk Free
+### TODO
+
+* one click config, YT video
+* setup step by step, YT video
+* reverse proxy with certificates (incl. when Splunk already HTTPS-enabled)
+* reverse proxy on the same port 8000 (Splunk on 127.0.0.1:8000)
+* reinstall when Splunk search was disabled after three violations, maintaining data
+* list of enterprise features that are available in Splunk Free
+
+### Known Issues
+* restart using UI doesn't work, an auth dialog get before a dialog "restart Splunk"
