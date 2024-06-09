@@ -1,10 +1,6 @@
-GitHub repo one click Setup and config. 
-restrict Splunk to run on localhost splunk-launch.conf SPLUNK_BINDIP=127.0.0.1
-Local Admin/User Login via reverse Proxy: apache 2.6/nginx 1.16
-Alerts: splunk search '| savedsearch "report_name" | stats count'
-Debug/Refresh - restart
-Stops after 500mb/day - cronjob license_usage.log
-Disable /manager/
-disalbe REST: Free trial Splunk Cloud Platform accounts cannot access the REST API.
-Curated List of Apps and Addons
-List of technics to reduce ingestion (SEDCMD,nullQueue,ingest action(?),Blocklist, etc)
+one click config, YT video
+setup step by step, YT video
+reverse proxy with certificates (incl. when Splunk already HTTPS-enabled)
+reverse proxy on the same port 8000 (Splunk on 127.0.0.1:8000)
+reinstall when Splunk search was disabled after three violations, maintaining data
+list of enterprise features that are available in Splunk Free
