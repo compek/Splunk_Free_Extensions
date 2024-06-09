@@ -41,6 +41,8 @@ Splunk inputs can be disabled when the license reaches the daily limit and re-en
 ## Setup
 
 ### Configure reverse proxy to enable access control
+
+Following steps were tested with Ubuntu 24.04 LTS
 ```
 apt install apache2
 cp splunk.conf /etc/apache2/sites-enabled/splunk.conf  # copy provided apache config
