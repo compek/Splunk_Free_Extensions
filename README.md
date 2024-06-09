@@ -46,8 +46,8 @@ apt install apache2
 cp splunk.conf /etc/apache2/sites-enabled/splunk.conf  # copy provided apache config
 vi /etc/apache2/ports.conf                             # add a port for reverse proxy to listen on, ex. Listen 10.20.30.40:8088
 a2enmod proxy proxy_http                               # enable proxy module
-htpasswd -bc /etc/apache2/.htpasswd user               # add a new user
-htpasswd -b  /etc/apache2/.htpasswd admin              # add a new admin
+htpasswd -c /etc/apache2/.htpasswd user                # add a new user
+htpasswd    /etc/apache2/.htpasswd admin               # add a new admin
 systemctl restart apache2                              # restart apache
 
 vi /opt/splunk/etc/splunk-launch.conf                  # add SPLUNK_BINDIP=127.0.0.1 to bind Splunk to localhost
