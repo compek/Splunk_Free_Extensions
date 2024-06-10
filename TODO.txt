@@ -6,6 +6,7 @@
 * reverse proxy on the same port 8000 (Splunk on 127.0.0.1:8000)
 * reinstall when Splunk search was disabled after three violations, maintaining data
 * list of enterprise features that are available in Splunk Free
+* test /manager bypass
 
 ### Known Issues
 * restart using UI doesn't work, an auth dialog get before a dialog "restart Splunk"
