@@ -29,6 +29,9 @@ Splunk Free Extensions is a collection of scripts and configurations that enhanc
 
 The access control (login with username/password) can be enabled by putting Splunk behind a reverse proxy with a basic authentication. Only authenticated user can access Splunk. A direct access to Splunk is restricted by modifing splunk-launch.conf by configuring SPLUNK_BINDIP=127.0.0.1. On the reverse proxy you can configure several users that belong to two categories: users and admin. Users can do anything except modifing system settings. This is done by denying access to /manager/ URI path. Admins have access to all settings. 
 
+![Splunk_Free_Extensions_Demo_Access_Control](https://github.com/compek/Splunk_Free_Extensions/assets/24303571/fc25ecde-6951-4a57-ba68-af50cab3c4b3)
+
+
 ## Alerts
 
 To configuring an alert a cron job need to be configured that call a script that run a CLI SPL code and return results to the script. An example how to handle splunk stats results is provided. An Email action is provided in example (using mail or swacks command).
