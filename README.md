@@ -12,8 +12,6 @@ There are several versions of Splunk software: Splunk Enterprise (a paid version
   * User Authentication and Roles:
     * There are no users or roles.
     * You are automatically logged in as an administrator-level user without any credentials.
-
-
 Even with these limitations Splunk Free is still very useful.
 
 Splunk Free Extensions is a collection of scripts and configurations that enhance Splunk Free and allows:
@@ -24,6 +22,19 @@ Splunk Free Extensions is a collection of scripts and configurations that enhanc
 * provides a workaround to configure alert actions by using cron and bash scripts
 * stop splunk input if the license usage reaches 500MB
 * etc.
+
+| Feature | Splunk Enterprise | Splunk Free Extensions - Workaround |
+| --- | --- | --- |
+|Ingest Action | + | Cribl, limited TRANSFORMS/SEDCMD/etc. |
+|Alterting (monitoring| + | scripting |
+|Access control (users and roles)| + | reverse proxy (user + admin) |
+|Distributed search incl. SH clustering | + | - |
+|Deployment management| + | - |
+|Index clustering | + | - |
+|TCP/HTTP Forwarding | + | - |
+|Report acceleration| + | - |
+|Debug/Referesh | + | - |
+|Daily Volume | License | Stop input before the license usage reaches 500MB |
 
 ## Access Control
 
