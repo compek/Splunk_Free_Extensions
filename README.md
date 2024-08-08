@@ -8,10 +8,11 @@ There are several versions of Splunk software: Splunk Enterprise (a paid version
   * If you exceed this limit, you’ll receive a license violation warning.
   * After three warnings within a rolling 30-day period, searching functionality is disabled.
 * Removed Features:
-  * Alerting (Monitoring): Not available in Splunk Free.
+  * Alerting (Monitoring).
   * User Authentication and Roles:
     * There are no users or roles.
     * You are automatically logged in as an administrator-level user without any credentials.
+      
 Even with these limitations Splunk Free is still very useful.
 
 Splunk Free Extensions is a collection of scripts and configurations that enhance Splunk Free and allows:
@@ -55,7 +56,7 @@ A throttle function (suppressing subsequent alerts until the throttle period is 
 
 ## Prevent license violations
 
-Splunk inputs can be disabled when the license reaches the daily limit and re-enabled at 00:00.
+Splunk inputs can be disabled when the license reaches the daily limit and re-enabled at 00:00. During the "disabled" time incomping events are discarded (for example by using UDP).  
 
 ## Setup
 
@@ -65,19 +66,19 @@ Following steps were tested with Ubuntu 24.04 LTS
 ```
 apt install apache2
 cp splunk.conf /etc/apache2/sites-enabled/splunk.conf  # copy provided apache config
-vi /etc/apache2/ports.conf                             # add a port for reverse proxy to listen on, ex. Listen 10.20.30.40:8000
+vi /etc/apache2/ports.conf                             # add a port for reverse proxy to listen on, ex. Listen 10.20.30.40:8000 and comment out Listen 80
 a2enmod proxy proxy_http                               # enable proxy module
-htpasswd -c /etc/apache2/.htpasswd user                # add a new user
+htpasswd -c /etc/apache2/.htpasswd user                # create a .htpasswd file and add a new user
 htpasswd    /etc/apache2/.htpasswd admin               # add a new admin
 systemctl restart apache2                              # restart apache
 
-vi /opt/splunk/etc/splunk-launch.conf                  # add SPLUNK_BINDIP=127.0.0.1 to bind Splunk to localhost
+vi $SPLUNK_HOME/etc/system/local/web.conf              # add [settings]\nserver.socket_host = 127.0.0.1 to bind Splunk UI to localhost
 systemctl restart Splunkd                              # restart Splunk
 ```
 
 ### Configure cron to enable Splunk alerts
 ```
-vi splunk_free_alert.sh # modify SPL and mail parameters
+vi splunk_free_alert.sh                                # modify SPL and mail parameters
 chmod +x splunk_free_alert.sh
 crontab -e # create a cronjob
 ```
