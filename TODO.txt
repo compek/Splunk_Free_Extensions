@@ -1,5 +1,5 @@
 ### TODO
-
+* add Realm https://datatracker.ietf.org/doc/html/rfc7235#section-2.2 to avoid re-auth prompt
 * reverse proxy with certificates (incl. when Splunk already HTTPS-enabled)
 * how to reinstall when Splunk search was disabled after three violations, maintaining data
 * test /manager bypass
