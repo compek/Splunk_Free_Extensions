@@ -1,0 +1,2 @@
+* browser (Edge/Chrome) shows 401 Unauthorized, "This server could not verify that you are authorized to access the document requested. Either you supplied the wrong credentials (e.g., bad password), or your browser doesn't understand how to supply the credentials required." but doesn't prompt for credentials
+  https://learn.microsoft.com/en-gb/DeployEdge/microsoft-edge-policies#authschemes set to ntlm,negotiate, therefore basic doesn't work
