@@ -2,4 +2,5 @@
 
 * restart using UI doesn't work, an auth dialog get before a dialog "restart Splunk", use CLI instead
 
-* browser shows 401 Unauthorized, "This server could not verify that you are authorized to access the document requested. Either you supplied the wrong credentials (e.g., bad password), or your browser doesn't understand how to supply the credentials required." but doesn't prompt for credentials
+
+
