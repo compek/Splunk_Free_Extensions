@@ -2,10 +2,11 @@
 
 * restart using UI doesn't work, an auth dialog get before a dialog "restart Splunk", use CLI instead
 
-* Splunk doesn't start, the port is not available. Problem: http has already bind the port:
+* Splunk doesn't start, the port is not available (Splunk run on 127.0.0.1:8000). Problem: http has already bind the port
+Solution #1: start Splunk before httpd:
 systemctl stop httpd
 systemctl stop Splunkd
 systemctl start Splunkd # start Splunk first, so it passes the port check
 systemctl start httpd # httpd starts after Splunk
 
-
+Solution #2: run httpd on other port
