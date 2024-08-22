@@ -4,5 +4,6 @@
 * how to reinstall when Splunk search was disabled after three violations, maintaining data
 * test /manager bypass
 * https://httpd.apache.org/docs/2.4/mod/mod_auth_form.html Form based Auth instead of Basic
+* protect 0.0.0.0:8089
 
 
