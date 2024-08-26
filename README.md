@@ -21,7 +21,7 @@ Splunk Free Extensions is a collection of scripts and configurations that enhanc
   * user "admin" can access everything and modify system settings
   * user "user" cannot modify system settings
 * provides a workaround to configure alert actions by using cron and bash scripts
-* stop splunk input if the license usage reaches 500MB
+* stop splunk input if the license usage reaches 500MB to prevent license violations
 * etc.
 
 | Feature | Splunk Enterprise | Splunk Free Extensions - Workaround |
