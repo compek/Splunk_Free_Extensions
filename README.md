@@ -1,7 +1,7 @@
 # Securing and extending Splunk Free Edition
 A collection of scripts and configurations that enhance Splunk Free by adding access control (user/admin login), preventing license violations by stopping ingesting, and providing workarounds for missing alerting feature.
 
-There are several versions of Splunk software: Splunk Enterprise (a paid version) and Splunk Free. Splunk Free is a limited version (https://docs.splunk.com/Documentation/Splunk/latest/Admin/MoreaboutSplunkFree). Here are the most important limitations:
+There are several versions of Splunk software: Splunk Enterprise (a paid version) and Splunk Free. Splunk Free is a limited version (https://docs.splunk.com/Documentation/Splunk/latest/Admin/MoreaboutSplunkFree). Here are the most important limitations of Splunk Free edition:
 
 * Daily Volume Ingestion Restriction:
   * Splunk Free allows indexing up to 500 MB of data per day.
