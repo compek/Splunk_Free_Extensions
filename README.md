@@ -24,7 +24,7 @@ Splunk Free Extensions is a collection of scripts and configurations that enhanc
 * stop splunk input if the license usage reaches 500MB to prevent license violations
 * etc.
 
-| Feature | Splunk Enterprise | Splunk Free Extensions - Workaround |
+| Feature | Splunk Enterprise | Splunk Free Extensions or Workaround |
 | --- | --- | --- |
 |Ingest Action | + | Cribl, limited TRANSFORMS/SEDCMD/etc. |
 |Alterting (monitoring| + | scripting |
@@ -32,9 +32,9 @@ Splunk Free Extensions is a collection of scripts and configurations that enhanc
 |Distributed search incl. SH clustering | + | - |
 |Deployment management| + | - |
 |Index clustering | + | - |
-|TCP/HTTP Forwarding | + | - |
-|Report acceleration| + | - |
-|Debug/Referesh | + | - |
+|TCP/HTTP Forwarding | + | syslog-ng, rsyslog, Cribl |
+|Report acceleration summaries| + | Data Model Accelerations or use of PREFIX |
+|Debug/Referesh | + | Splunk Restart |
 |Daily Volume | License | Stop input before the license usage reaches 500MB |
 
 ## Access Control
