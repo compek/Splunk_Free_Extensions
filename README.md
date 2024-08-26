@@ -82,3 +82,9 @@ vi splunk_free_alert.sh                                # modify SPL and mail par
 chmod +x splunk_free_alert.sh
 crontab -e # create a cronjob
 ```
+
+### Disclamer ###
+* The reverse proxy configuration is based on the idea that all management functions are located behind the /manager URI path. This “just enough” approach is suitable for a simple setup, though it is somewhat naive and not intended to be bulletproof.
+* This release is a BETA.
+* Test anything before using in production.
+* All you do with this software is on your own responsibility.
