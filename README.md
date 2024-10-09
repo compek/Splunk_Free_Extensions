@@ -26,8 +26,8 @@ Splunk Free Extensions is a collection of scripts and configurations that enhanc
 
 | Feature | Splunk Enterprise | Splunk Free Extensions or Workaround |
 | --- | --- | --- |
-|Ingest Action | + | Cribl, limited TRANSFORMS/SEDCMD/etc. |
-|Alterting (monitoring| + | scripting |
+|Ingest Action | + | Cribl, TRANSFORMS/SEDCMD/etc. |
+|Alterting (monitoring)| + | scripting |
 |Access control (users and roles)| + | reverse proxy (user + admin) |
 |Distributed search incl. SH clustering | + | - |
 |Deployment management| + | - |
@@ -35,7 +35,7 @@ Splunk Free Extensions is a collection of scripts and configurations that enhanc
 |TCP/HTTP Forwarding | + | syslog-ng, rsyslog, Cribl |
 |Report acceleration summaries| + | Data Model Accelerations or use of PREFIX |
 |Debug/Referesh | + | Splunk Restart |
-|Daily Volume | License | Stop input before the license usage reaches 500MB |
+|Daily Volume | License | Stop input before the license usage reaches 500MB, data reduction, split data across multiple instances |
 
 ## Access Control
 
